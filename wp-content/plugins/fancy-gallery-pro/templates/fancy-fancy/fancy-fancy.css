@@ -1,0 +1,31 @@
+.gallery.fancy-fancy {
+  text-align: center;
+}
+.gallery.fancy-fancy img {
+  -moz-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -khtml-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  margin: 10px 15px;
+  border: 10px solid #f1f1f1;
+}
+.gallery.fancy-fancy a:nth-child(odd) img {
+  -moz-transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -khtml-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+.gallery.fancy-fancy a:hover img {
+  -moz-transform: rotate(0);
+  -webkit-transform: rotate(0);
+  -o-transform: rotate(0);
+  -khtml-transform: rotate(0);
+  transform: rotate(0);
+}

@@ -1,0 +1,12 @@
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+div#gallery-settings,
+div#gallery-settings *,
+table.describe tr.url,
+table.describe tr.align,
+table.describe tr.image-size,
+td.savesend input.button {
+  display: none;
+}

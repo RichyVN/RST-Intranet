@@ -1,0 +1,15 @@
+/*
+Styles for older IE versions (previous to IE9).
+*/
+
+body {
+	line-height: 1.1;
+}
+.main-navigation ul.nav-menu,
+.main-navigation div.nav-menu > ul {
+	border-bottom: 0px solid #ededed;
+	border-top: 0px solid #ededed;
+	display: inline-block !important;
+	text-align: left;
+	width: 100%;
+}

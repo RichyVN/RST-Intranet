@@ -1,0 +1,689 @@
+/*
+Theme Name: RSTBV
+Author: Richard van Naamen
+Author URI: http://www.vannaamen.nl/
+Description: A child theme from The 2012 theme for WordPress.
+Version: 1.0
+Template: twentytwelve
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: rstbv
+
+*/
+@import url("../twentytwelve/style.css");
+
+/* Algemeen */
+body {
+  color: #333;
+  font-size: 14px;
+	line-height: 1.1;
+}
+body .site {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+	border: 1px solid #555;
+  margin-bottom: 3.42857rem;
+  margin-top: 0.75em;
+  padding: 0;
+}
+button, input, select, textarea {
+  border-radius: 3px;
+  font-family: inherit;
+  padding: 0.428571rem;
+	border: 1px solid #888;
+}
+body.page-template-full-width #primary{
+	width: 100%;
+}
+.site {
+  margin: 0 auto;
+  max-width: 80rem;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 1.71429rem;
+}
+#primary-kranen {
+  width: 100%;
+	position: relative;
+}
+.legenda {
+	position: absolute;
+	top: 5px;
+	left: 330px;
+}
+.kranen h4 {
+	margin: 0;
+}
+.entry-content h2, .comment-content h2 {
+    margin: 12px 0;
+    line-height: 1.2;
+}
+.entry-content h3, .comment-content h3 {
+    margin: 10px 0;
+    line-height: 1;
+}
+.rood, .rood a{
+	color: red!important;
+}
+a {
+  transition: all 0.25s ease-in-out 0s;
+}
+a:link, a:visited, .comments-link a, .entry-meta a, .entry-content a:visited, .comment-content a:visited  {
+  color: #5677AC;
+  outline: medium none;
+}
+a:hover, a:active, .comments-link a:hover, .entry-meta a:hover, .entry-content a:hover {
+  color: #996600;
+}
+.greyedout {
+	color: #B2A59C;
+}
+.table {
+	border: 1px solid #B2A59C;
+	padding: 3px;
+}
+
+
+/* FONTS */
+@font-face {
+    font-family: Genericons;
+    src: url(fonts/genericons-regular-webfont.eot);
+    src: url(fonts/genericons-regular-webfont.eot?#iefix) format("embedded-opentype"),
+         url(fonts/genericons-regular-webfont.woff) format("woff"),
+         url(fonts/genericons-regular-webfont.ttf) format("truetype"),
+         url(fonts/genericons-regular-webfont.svg#genericonsregular) format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/* Genericons */
+.posted-in:before,
+.posted-on:before,
+.tagged-as:before,
+.posted-by:before,
+.comments-link:before,
+a[href$=".pdf"]:after,
+a[href^="mailto:"]:after,
+.edit-link:before {
+    display: inline-block;
+    width: 24px;
+	  color: #73603E;
+    height: 16px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 23px;
+    line-height: 1;
+    font-family: 'Genericons';
+    text-decoration: inherit;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: top;
+}
+/* Font Awesome icons colors*/
+.fa-ico-default{
+    color: #333;
+ }
+.fa-ico-info, .info {
+    color: blue;
+ }
+.fa-ico-okay{
+    color: forestgreen;
+ }
+.fa-ico-error{
+    color: red;
+ }
+
+/* Meta icons */
+.posted-in:before {
+    content: "\f301";
+}
+.posted-on:before {
+    content: "\f307";
+}
+.tagged-as:before {
+    content: "\f302";
+}
+.posted-by:before {
+    content: "\f304";
+}
+.comments-link:before {
+    content: "\f300";
+}
+a[href$=".pdf"]:after{
+	  content: "\f443";
+	  text-decoration: none;
+}
+a[href^="mailto:"]:after {
+	  content: "\f410";
+	  text-decoration:none;
+}
+/* Header */
+.site-header {
+  padding: 0;
+	position: relative;
+}
+.site-header .logo{
+  padding: 0;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 200px;
+	height: 200px;
+	background: url("images/RST-logo-clear-shadow.svg") no-repeat scroll 5px 0px / 100% auto rgba(0, 0, 0, 0);
+	animation: slide-logo 0.75s ease-in-out forwards 1;
+}
+@keyframes slide-logo {
+	0% {transform: translateX(-400px);}
+	80% {transform: translateX(5px);}
+	100% {transform: translateX(0px);}
+}
+.site-header a{
+	display: block;
+}
+.site-header h1 {
+  font-size: 4rem;
+  line-height: 1.84615;
+  margin: -32px 0 0 0;
+	color: rgba(255, 255, 255, 0.8);
+	text-shadow: 0 2px 0 rgba(115, 136, 206, 0.7), 1px 1px 6px #4472b9;
+	text-transform: uppercase;
+	text-align: center;
+}
+/* resetting page and archive titles to post titles*/
+.ict-page h1.entry-title, .archive-title, .kranen-title, .archive-weekmenu-header .title {
+  font-size: 21px;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: normal;
+  margin: 0 0 1.7rem 0;
+	text-transform: none; 
+}
+/* add icons to main h1 page titles */
+/* home page icon */
+.home h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f015";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* ict page icon */
+.ict-page h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f108";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* personeel page icon */
+.page-id-32 h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f0c0";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* nieuws page icon */
+.category-nieuws h1.archive-title:before {
+	font-family: 'FontAwesome';
+	content: "\f1ea";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* formulieren page icon */
+.page-id-147 h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f022";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* weekmenu page icon */
+.post-type-archive-weekmenu h1.title:before {
+	font-family: 'FontAwesome';
+	content: "\f0f5";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* links page icon */
+.page-id-227 h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f0c1";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+/* fotos page icon */
+.page-id-237 h1.entry-title:before {
+	font-family: 'FontAwesome';
+	content: "\f03e";
+	text-decoration:none;
+	font-size: 24px;
+	padding-right: 5px;
+}
+.site-header hgroup{
+  padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 400;
+	clip: none;
+}
+.entry-content img, .comment-content img, .widget img, img.header-image {
+  margin: 0 0 -2px 0;
+	border-radius: 0;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+}
+.header-widget-area{
+	bottom: 25%;
+  position: absolute;
+  right: 0;
+	margin-right: 2em;
+}
+.header-widget-area .widget {
+	margin-bottom: 2em;
+	margin-right: -1em;
+}
+.header-widget-area .date {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: small;
+	background-color:rgba(50, 50, 50, 0.85);
+	text-shadow: 1px 1px 0 #000000;
+	line-height: 2;
+  text-indent: 1em;
+	margin-right: -1.4em;
+}
+.header-widget-area .widget_search{
+	color: #ffffff;
+	margin-right: 1em;
+}
+form#loginform p {
+	margin-bottom: 0;
+}
+
+/* Main */
+.wrapper {
+	margin: 0 1.71429em;
+}
+/* Navigation */
+.main-navigation {
+  margin: 0;
+  text-align: center;
+	background-color: rgba(51, 51, 51, 0.92);
+  border-top: 1px solid #222;
+  color: #ffffff;
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.main-navigation .nav-menu  {
+	margin: 0 1.5em;
+}
+.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
+  border-bottom: 0px solid #ededed;
+  border-top: 0px solid #ededed;
+  width: 100%;
+}
+.main-navigation .current-menu-item > a, .main-navigation .current-menu-item > a:hover, .main-navigation .current-menu-ancestor > a, .main-navigation .current_page_item > a, .main-navigation .current_page_ancestor > a {
+	color:#333333;
+  font-weight: normal;
+	text-shadow: 0 0 0 hsl(0, 0%, 0%);
+	background-color:#ffffff;
+	cursor: default;
+	border-radius: 3px 3px 0 0;
+}
+.main-navigation li {
+    margin: 0;
+    position: relative;
+}
+.main-navigation li a {
+  border-bottom: 0 none;
+  color: #ffffff;
+  line-height: 3;
+	padding: 0 6px;
+  text-transform: capitalize;
+  white-space: nowrap;
+	text-shadow: 1px 1px 0 #000000
+}
+.main-navigation li a:hover, .main-navigation li a:focus {
+  color: #998877;
+}
+
+/* Main Content */
+#primary {
+  float: left;
+  width: 70%;
+}
+.site-info {
+	color: #ffffff!important;
+	position: relative;
+}
+.site-info .widget-area {
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 1em;
+	margin: 0;
+	width: 90%;
+}
+.site-info .widget-area .widget{
+	margin: 0;
+}
+.site-info .menu  ul, .site-info .menu li, .site-info .widget_nav_menu{
+	display: inline-block;
+	list-style: none;
+}
+.site-info .menu li {
+	padding: 0 5px;
+}
+.site-info a {
+  border-right: 1px solid #444;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  height: 23px;
+  margin: 0 -14px 0 0;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+.site-info a:hover {
+  background: none repeat scroll 0 0 #444444;
+  color: #998876;
+}
+.berichten {
+  padding-top: 20px;
+  width: 100%;
+}
+.berichten h2 {
+	margin: 0 0 10px 0;
+}
+.berichten ul {
+	width: 100%;
+}
+.berichten ul li {
+	margin: 2px 0 0 15px;
+}
+.calamiteiten {
+  background: none repeat scroll 0 0 #e3e3e3;
+  border: 1px solid #a4a4a4;
+  text-align: center;
+	width: 168px;
+}
+.site-content article {
+  -moz-hyphens: auto;
+  border-bottom: 0px double rgba(84, 84, 84, 0.65);
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+}
+.entry-header img.wp-post-image {
+    margin: 0;
+}
+.entry-content img, .comment-content img, .widget img, .author-avatar img, img.wp-post-image {
+    border-radius: 0px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+}
+.page-title, .widget-title  {
+  color: #222;
+	font-size: 0.85rem;
+}
+
+/* Table styles */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead tr, .kraan-table th {
+	background-color: #82ADDA;
+	padding: 0 0 0 3px;
+	border: 1px solid lightgray ;
+}
+.entry-content table, .comment-content table {
+    border: 0 solid black;
+		color: #222;
+    font-size: 14px;
+    line-height: 2;
+    margin: 0 0 24px;
+    margin: 0 0 1.714285714rem;
+    width: 100%;
+}
+.entry-content td, .comment-content td {
+    border: 1px solid lightgray ;
+    padding: 5px;
+}
+.entry-content th, .comment-content th{
+	color: #fff;
+	font-size: 0.75rem;
+	padding: 5px;
+}
+.tb-werklijst td {
+    border-top: 1px solid hsl(0, 0%, 83%);
+	  border-bottom: 1px solid hsl(0, 0%, 83%);
+	  border-left: 0px solid hsl(0, 0%, 83%);
+	  border-right: 0px solid hsl(0, 0%, 83%);
+    padding: 3px;
+}
+/* Archive Pages */
+.archive-header, .page-header {
+    border-bottom: 0 solid rgba(84, 84, 84, 0.65);
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+.archive .entry-header, .single .entry-header{
+	position: relative;
+	overflow: hidden;
+}
+.archive .entry-title, .single .entry-title{
+	background: rgba(0, 0, 0, 0.65);
+	position: absolute;
+	/*bottom: 26px;*/
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	line-height: 2;
+	color: white;
+	z-index: 1000;
+}
+.archive .entry-title a{
+	text-decoration: none;
+	color: white;
+}
+.archive-meta {
+    color: hsl(0, 0%, 46%);
+    font-size: 1rem;
+    line-height: 2;
+    margin-top: -24px;
+}
+.entry-header img.wp-post-image  {
+	transition: all 0.2s ease-in;
+}
+.entry-header img.wp-post-image:hover {
+	-moz-transform:scale(1.05);
+	-webkit-transform:scale(1.05);
+	-o-transform:scale(1.05);
+	transform: scale(1.05);
+}
+.entry-header > a {
+    display: flex;
+    top: 0;
+}
+/* Weekmenu styles */
+.archive-weekmenu-header {
+    margin-bottom: 1.71429rem;
+}
+.archive p {
+    line-height: 1.71429;
+    margin: 0 0 1.71429rem;
+}
+.weekmenu {
+	margin: 1.71429rem 0; 
+}
+.weekmenu  h2{
+	margin: 0.5rem 0;
+}
+.weekmenu  .label {
+	margin: 0;
+	display: inline-block;
+	width: 120px;
+	font-weight: bold;
+	line-height: 1.71429;
+}
+.weekmenu-content{
+	margin: 2rem 0; 
+}
+/* Algemene styles */
+.edit-link {
+	line-height:2;
+	padding: 3px;
+	background-color: green;
+}
+.edit-link  a , .edit-link  a:hover, .more-link{
+	color: white;
+	text-decoration: none;
+}
+.more-link {
+	line-height: 2;
+	padding: 2px 4px;
+	background-color: gray;
+	color: #fff!important;
+}
+.more-link:hover {
+	padding: 4px 4px;
+	background-color: dark-gray;
+	color: #111!important;
+}
+/* Sidebar */
+#secondary {
+  float: right;
+  width: 25%;
+}
+.widget-area .widget a , .widget-area .widget a:visited{
+  color: #5677AC;
+}
+.widget-area .widget h3 {
+  margin-bottom: 0;
+	border-bottom: 1px solid rgba(84, 84, 84, 0.55);
+}
+
+/* Sidebar icons */
+.sidebarstoring:before {
+	font-family: 'FontAwesome';
+	color:red;
+	content: "\f098";
+	text-decoration:none;
+	font-size: 16px;
+	padding-right: 5px;
+}
+.sidebarweekmenu:before {
+	font-family: 'FontAwesome';
+	color:#5677AC;
+	content: "\f0f5";
+	text-decoration:none;
+	font-size: 16px;
+	padding-right: 5px;
+}
+.sidebarcontact:before {
+	font-family: 'FontAwesome';
+	color:#5677AC;
+	content: "\f05a";
+	text-decoration:none;
+	font-size: 16px;
+	padding-right: 5px;
+}
+.widget_recent_entries li:before {
+	font-family: 'FontAwesome';
+	color:#5677AC;
+	content: "\f036";
+	text-decoration:none;
+	font-size: 16px;
+	padding-right: 7px;
+	font-weight: normal;
+	margin-left: -1.65em;
+}
+.widget_recent_entries li{
+    padding: 0 0 0 2em;
+}
+/* Personeel Pages*/
+.employeephoto img{
+	box-shadow: 2px 1px 4px rgba(100, 100, 100, 0.50);
+	border: 1px solid rgba(84, 84, 84, 0.55);
+}
+/* Footer */
+footer[role="contentinfo"] {
+  background: none repeat scroll 0 0 #333;
+  border-top: 1px solid #111;
+  clear: both;
+  font-size: 0.857143rem;
+  line-height: 2;
+	height: 25px;
+  padding: 12px;
+	margin: 0;
+	max-width: 100%;
+}
+
+/* media query for smaller screens */
+@media all and (max-width: 599px) {
+	body .site {
+		margin-top: 0;
+	}
+.site-header .logo {
+		background: hsla(0, 0%, 0%, 0) url("images/RST-logo-clear-shadow.svg") no-repeat scroll 5px 0 / 50% auto;
+	}
+	.site-header h1 {
+		font-size: 2rem;
+    line-height: 0;
+    margin: 10px 0 0;
+	}
+	.header-widget-area {
+		display: none;
+	}
+	#primary {
+		float: left;
+    width: 100%;
+	}
+	#secondary {
+    float: right;
+    width: 100%;
+	}
+	.entry-content li, .comment-content li, .mu_register li {
+    margin: 0 0 0 12px;
+	}
+	.main-navigation {
+  	height: 33px;
+    top: 66%;
+		background-color: hsla(0, 0%, 0%, 0);
+    border-top: 0px solid hsl(0, 0%, 13%);
+	}
+	.main-navigation .nav-menu {
+    margin: 0;
+	}
+	.main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
+    width: 90%;
+		background: hsla(0, 0%, 20%, 0.90) none repeat scroll 0 0;
+    border: 1px solid hsl(0, 0%, 53%);
+	}
+	.entry-header .entry-title {
+		font-size: 1rem;
+	}
+	.ict-page h1.entry-title, .archive-title, .kranen-title, .archive-weekmenu-header .title {
+    font-size: 1rem;
+    line-height: 1;
+		margin: 0 0 0.7rem;
+	}
+	.site-info a {
+    border-right: 0px solid #444;
+    font-weight: normal;
+    height: 23px;
+    margin: 0;
+    padding: 2px 2px;
+	}
+	.site-info .widget-area .widget {
+    width: 100%;
+  }
+
+
+
+
+
+}

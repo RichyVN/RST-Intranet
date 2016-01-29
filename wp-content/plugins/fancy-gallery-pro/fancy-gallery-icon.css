@@ -1,0 +1,12 @@
+div#icon-edit.icon32-posts-fancy-gallery,
+body.settings_page_wp_plugin_fancy_gallery div#icon-edit.icon32 {
+  background: url(image/gallery-icon-32x32.png) scroll no-repeat center center;
+}
+
+ul#adminmenu li#menu-posts-fancy-gallery div.wp-menu-image {
+  background: url(image/gallery-icon-16x16-gray.png) scroll no-repeat 6px 7px;
+}
+ul#adminmenu li#menu-posts-fancy-gallery:hover div.wp-menu-image,
+ul#adminmenu li#menu-posts-fancy-gallery.wp-has-current-submenu div.wp-menu-image {
+  background-image: url(image/gallery-icon-16x16.png);
+}

@@ -1,0 +1,14 @@
+span.show-colorpicker {
+  display: inline-block;
+  vertical-align: bottom;
+  background: url(image/picker.png) scroll no-repeat center center;
+  width: 19px;
+  height: 24px;
+  line-height: 24px;
+  cursor: pointer;
+}
+div.capability-selection span.caption { display: inline-block; width: 275px; }
+div.capability-selection input { margin-left: 15px; }
+.postbox .hndle { cursor: pointer; }
+div.capability-selection.highlight1 { background-color: #eee; }
+div.capability-selection.highlight2 { background-color: #ddd; }
